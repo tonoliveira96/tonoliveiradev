@@ -13,6 +13,8 @@ export const globalStyles = globalCss({
 
   'body, input, textarea, button': {
     fontFamily: 'Poppins',
-    fontWeight: 400
+    fontWeight: 400,
+    color: '$text',
+    fontSize: '1rem'
   }
 });

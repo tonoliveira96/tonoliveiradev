@@ -15,7 +15,9 @@ export const {
       main: "blue",
       background: "#f7f7f7",
 
-      white: "#ffffff"
+      white: "#ffffff",
+      text: "#222222",
+      subtitle: "#5F6F81"
     }
   }
 });
