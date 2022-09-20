@@ -1,6 +1,10 @@
 import { NextPage } from 'next';
-import { HeaderContainer, MainContainer, SectionContainer, SocialButton, SocialsContainer } from '../../styles/pages/app';
+import Image from 'next/image';
+import { AboutMe, HeaderContainer, MainContainer, SectionContainer, Skills, SkillsItem, SocialButton, SocialsContainer } from '../../styles/pages/app';
 import { FiLinkedin, FiGithub } from "react-icons/fi";
+
+import javascriptIcon from "../assets/skills/javascript.svg";
+import htmlIcon from "../assets/skills/html.svg";
 
 const Home: NextPage = () => {
   return (
@@ -28,15 +32,55 @@ const Home: NextPage = () => {
 
       <MainContainer>
         <SectionContainer>
-          <span>algumas informações</span>
+          <span className='top-section'>algumas informações</span>
           <h2>Sobre  mim</h2>
 
-          <article>
+          <AboutMe>
             <p>
               Opa! Eu sou o Everton, tenho 26 anos, sou Graduado como Tecnólogo em Análise e Desenvolvimento de Sistemas, tenho experiência com suporte técnico e treinamento de sistemas. Atualmente, foco na área de desenvolvimento de software web.
               Acredito que qualquer tipo de aprendizado nos leva ao crescimento.
             </p>
-          </article>
+          </AboutMe>
+        </SectionContainer>
+
+        <SectionContainer>
+          <span className='top-section'>Veja minhas</span>
+          <h2>Skills</h2>
+
+          <Skills>
+            <SkillsItem>
+              <Image src={ javascriptIcon } alt="" />
+              <p>HTML</p>
+            </SkillsItem>
+            <SkillsItem>
+              <Image src={ javascriptIcon } alt="" />
+              <p>CSS</p>
+            </SkillsItem>
+            <SkillsItem>
+              <Image src={ javascriptIcon } alt="" />
+              <p>JavaScript</p>
+            </SkillsItem>
+            <SkillsItem>
+              <Image src={ javascriptIcon } alt="" />
+              <p>TypeScript</p>
+            </SkillsItem>
+            <SkillsItem>
+              <Image src={ javascriptIcon } alt="" />
+              <p>ReactJS</p>
+            </SkillsItem>
+            <SkillsItem>
+              <Image src={ javascriptIcon } alt="" />
+              <p>React Native</p>
+            </SkillsItem>
+            <SkillsItem>
+              <Image src={ javascriptIcon } alt="" />
+              <p>Node</p>
+            </SkillsItem>
+            <SkillsItem>
+              <Image src={ javascriptIcon } alt="" />
+              <p>Git</p>
+            </SkillsItem>
+          </Skills>
         </SectionContainer>
       </MainContainer>
     </>

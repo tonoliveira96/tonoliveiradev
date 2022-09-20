@@ -67,7 +67,8 @@ export const SocialButton = styled('a', {
 
 export const MainContainer = styled('main', {
   display: 'flex',
-  justifyContent: 'center',
+  flexDirection: 'column',
+  alignItems: 'center',
   padding: 30,
 });
 
@@ -81,7 +82,7 @@ export const SectionContainer = styled('section', {
     paddingLeft: 80,
     textTransform: 'uppercase',
 
-    '&:before': {
+    '&.top-section:before': {
       content: "",
       position: 'absolute',
       left: 0,
@@ -97,5 +98,46 @@ export const SectionContainer = styled('section', {
     fontWeight: 600,
     textTransform: 'uppercase',
     margin: '1rem 0'
+  }
+});
+
+export const AboutMe = styled('article', {
+  background: '$white',
+  padding: '2.5rem',
+  borderRadius: 30,
+
+  p: {
+    fontSize: 18,
+    lineHeight: 1.6
+  }
+});
+
+export const Skills = styled('ul', {
+  display: 'flex',
+  
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  gap: '2.5rem',
+  background: '$white',
+  padding: '2.5rem',
+  borderRadius: 20,
+});
+
+export const SkillsItem = styled('li', {
+  listStyle: 'none',
+  textAlign: 'center',
+  width: 80,
+  padding: 10,
+  borderRadius: 10,
+  border: '1px solid #eee',
+  boxShadow: '0px 4px 6px rgb(134 151 168 / 10%)',
+
+  img: {
+    minWidth: 35,
+    minHeight: 35
+  },
+
+  p: {
+    fontSize: '0.875rem'
   }
 });
