@@ -40,7 +40,7 @@ const Home: NextPage = () => {
           <img src="https://github.com/tonoliveira96.png" alt='Foto de perfil' />
           <div>
             <p>ÓLA, EU SOU</p>
-            <h1>Ton Oliveira</h1>
+            <h1>Everton Oliveira</h1>
             <p>Dado o fluxo de dados atual, a compilação final do programa causou o bug dos argumentos que definem um schema dinâmico</p>
             <SocialsContainer>
               <button className='resume'>Currículo</button>

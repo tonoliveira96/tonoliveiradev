@@ -4,6 +4,7 @@ export const AsideMenu = styled('aside', {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
+  alignItems: 'center',
   position: 'fixed',
   background: '$main',
   width: 110,
@@ -81,7 +82,7 @@ export const HeaderContainer = styled('header', {
     justifyContent: 'flex-start',
     height: '70vh',
 
-    img:{
+    img: {
       width: 250,
       height: 250,
     }
@@ -93,6 +94,7 @@ export const SocialsContainer = styled('div', {
   flexDirection: 'row',
   justifyContent: 'space-between',
   alignItems: 'center',
+  gap: '1rem',
 
   'button': {
     padding: '0.6rem 1rem',
@@ -102,13 +104,21 @@ export const SocialsContainer = styled('div', {
     color: '$white',
     letterSpacing: 2,
     boxShadow: '0px 4px 6px rgb(134 151 168 / 10%)',
+
+    '&:hover': {
+      filter: 'brightness(0.9)'
+    }
   },
 
   div: {
     display: 'flex',
     flexDirection: 'row',
-  }
+    filter: ''
+  },
 
+  '@media(max-width: 680px)': {
+    flexDirection: 'column'
+  }
 });
 
 export const SocialButton = styled('a', {
@@ -173,17 +183,16 @@ export const AboutMe = styled('article', {
     lineHeight: 1.6
   },
 
-  '@media(max-width: 680px)':{
+  '@media(max-width: 680px)': {
     padding: '1rem',
   }
 });
 
 export const Skills = styled('ul', {
   display: 'flex',
-
   flexDirection: 'row',
   flexWrap: 'wrap',
-  gap: '2.5rem',
+  gap: '2rem',
   background: '$white',
   padding: '2.5rem',
   borderRadius: 20,
