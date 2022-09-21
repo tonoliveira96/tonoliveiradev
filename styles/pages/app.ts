@@ -1,10 +1,61 @@
 import { styled } from '..';
 
+export const AsideMenu = styled('aside', {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  position: 'fixed',
+  background: '$main',
+  width: 110,
+  height: '100vh',
+  left: 0,
+
+  nav: {
+    padding: 26
+  },
+
+  ul: {
+
+  },
+
+  li: {
+    listStyle: 'none'
+  },
+
+  '@media(max-width: 720px)': {
+    display: 'none'
+  }
+});
+
+export const MenuItem = styled('a', {
+  '&.menu-item': {
+    display: 'inline-block',
+    padding: '13px 17px',
+    marginBottom: 10,
+    borderRadius: 6,
+    width: '100%',
+    color: '$white',
+    textDecoration: 'none',
+  }
+});
+
+export const WrapperContainer = styled('div', {
+  width: 'calc(100% -90px)',
+  marginLeft: 90,
+  overflow: 'hidden',
+
+  '@media(max-width: 720px)': {
+    width: '100%',
+    marginLeft: 0
+  }
+});
+
 export const HeaderContainer = styled('header', {
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',
+  padding: 30,
   gap: '2rem',
   height: '100vh',
 
@@ -23,6 +74,17 @@ export const HeaderContainer = styled('header', {
   h1: {
     textTransform: 'uppercase',
     color: '$text'
+  },
+
+  '@media(max-width: 720px)': {
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    height: '70vh',
+
+    img:{
+      width: 250,
+      height: 250,
+    }
   }
 });
 
@@ -74,7 +136,7 @@ export const MainContainer = styled('main', {
 
 export const SectionContainer = styled('section', {
   maxWidth: 1080,
-  padding: '80px 0',
+  padding: '3rem 0',
 
   span: {
     position: 'relative',
@@ -109,12 +171,16 @@ export const AboutMe = styled('article', {
   p: {
     fontSize: 18,
     lineHeight: 1.6
+  },
+
+  '@media(max-width: 680px)':{
+    padding: '1rem',
   }
 });
 
 export const Skills = styled('ul', {
   display: 'flex',
-  
+
   flexDirection: 'row',
   flexWrap: 'wrap',
   gap: '2.5rem',
