@@ -213,6 +213,74 @@ export const SkillsItem = styled('li', {
   },
 
   p: {
-    fontSize: '0.875rem'
+    fontSize: '0.875rem',
+    fontWeight: 'bold'
+  },
+
+  '&:hover': {
+    filter: 'brightness(0.9)'
   }
 });
+
+export const SectionProjectsContainer = styled('section', {
+  display: 'grid',
+  width: '100%',
+  gap: '1rem',
+  gridTemplateColumns: '50% 50%',
+
+  '@media(max-width: 720px)': {
+    gridTemplateColumns: '100%'
+  }
+});
+
+export const ProjectCard = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '0.5rem',
+  justifyContent: 'left',
+  background: '$white',
+  padding: '2rem',
+  borderRadius: 30,
+
+  img: {
+    width: '100%',
+    height: '100%',
+
+  },
+
+  '#project_name': {
+    width: '100%',
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'left'
+  },
+
+  p: {
+    fontSize: 14,
+    lineHeight: 1.6,
+    textAlign: 'justify'
+  },
+
+  '@media(max-width: 680px)': {
+    padding: '1rem',
+  }
+});
+
+export const ButtonVisitWebSite = styled('a', {
+  display: 'flex',
+  gap: '0.3rem',
+  alignItems: 'center',
+  justifyContent: 'center',
+  maxWidth: 128,
+  fontSize: 16,
+  padding: '0.5rem',
+  borderRadius: 10,
+  marginTop: 10,
+  background: '$main',
+  color: '$white',
+
+  '&:hover': {
+    filter: 'brightness(0.9)'
+  }
+})
+
