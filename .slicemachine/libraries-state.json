@@ -1,0 +1,129 @@
+{
+  "slices": {
+    "components": {
+      "projetcs": {
+        "library": "slices",
+        "id": "projetcs",
+        "name": "Projetcs",
+        "description": "Projetcs",
+        "model": {
+          "id": "projetcs",
+          "type": "SharedSlice",
+          "name": "Projetcs",
+          "description": "Projetcs",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Projetcs",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                }
+              },
+              "items": {
+                "project_name": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "project_name",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "description",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "project_name": [
+                  {
+                    "type": "paragraph",
+                    "text": "Amet amet magna irure sint ea ut labore irure sint culpa ut enim commodo. Irure officia laborum reprehenderit fugiat. Irure reprehenderit aliquip elit.",
+                    "spans": []
+                  }
+                ],
+                "description": [
+                  {
+                    "type": "paragraph",
+                    "text": "Duis esse officia officia amet eiusmod ut ex fugiat nulla ut id do occaecat veniam consectetur. Ea mollit nulla voluptate est dolore. Incididunt nisi dolore Lorem incididunt magna qui exercitation et eiusmod cillum.",
+                    "spans": []
+                  }
+                ],
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": null,
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468"
+                }
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Solid",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Incididunt aliquip est deserunt dolore minim aliquip fugiat esse ipsum dolor mollit aliqua occaecat. Proident aliquip est anim est veniam tempor laborum voluptate. Officia eu consequat nisi excepteur ut non aliqua id id fugiat labore laboris.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "projetcs"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      }
+    }
+  }
+}

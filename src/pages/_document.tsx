@@ -5,7 +5,6 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <title>Ton Oliveira - Dev</title>
         <meta name='description' content='Olá, eu sou Everton Oliveira, desenvolvedor web.' />
         <meta property='og:title' content='Everton Oliveira - Desenvolvedor web' />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -7,7 +7,7 @@ export const AsideMenu = styled('aside', {
   alignItems: 'center',
   position: 'fixed',
   background: '$main',
-  width: 110,
+  width: 128,
   height: '100vh',
   left: 0,
 
@@ -31,12 +31,18 @@ export const AsideMenu = styled('aside', {
 export const MenuItem = styled('a', {
   '&.menu-item': {
     display: 'inline-block',
-    padding: '13px 17px',
+    textAlign: 'center',
+    padding: '10px',
     marginBottom: 10,
-    borderRadius: 6,
-    width: '100%',
+    borderRadius: 10,
+    width: 100,
     color: '$white',
+    background: '$main',
     textDecoration: 'none',
+  },
+
+  '&:hover': {
+    filter: 'brightness(0.9)'
   }
 });
 
@@ -214,5 +220,20 @@ export const SkillsItem = styled('li', {
 
   p: {
     fontSize: '0.875rem'
+  }
+});
+
+export const ProjectCard = styled('div', {
+  background: '$white',
+  padding: '2.5rem',
+  borderRadius: 30,
+
+  p: {
+    fontSize: 18,
+    lineHeight: 1.6
+  },
+
+  '@media(max-width: 680px)': {
+    padding: '1rem',
   }
 });
