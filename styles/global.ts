@@ -6,9 +6,13 @@ export const globalStyles = globalCss({
     padding: 0
   },
 
+  html: {
+    scrollBehavior: 'smooth',
+  },
+
   body: {
     '-webkit-font-smoothing': 'antialiased',
-    backgroundColor: '$background'
+    backgroundColor: '$background',
   },
 
   'body, input, textarea, button': {

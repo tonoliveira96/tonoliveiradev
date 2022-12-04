@@ -1,11 +1,9 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import { AboutMe, AsideMenu, ButtonVisitWebSite, HeaderContainer, MainContainer, MenuItem, ProjectCard, SectionContainer, SectionProjectsContainer, Skills, SkillsItem, SocialButton, SocialsContainer, WrapperContainer } from '../../styles/pages/app';
-import { FiLinkedin, FiGithub, FiHome, FiGlobe } from "react-icons/fi";
-
-import javascriptIcon from "../assets/skills/javascript.svg";
-import htmlIcon from "../assets/skills/html.svg";
+import { FiLinkedin, FiGithub, FiGlobe } from "react-icons/fi";
 import { useState } from 'react';
+import { skills } from '../../styles/data';
 
 const Home: NextPage = () => {
   const [open, setOpen] = useState(false);
@@ -46,11 +44,11 @@ const Home: NextPage = () => {
           <div>
             <p>ÓLA, EU SOU</p>
             <h1>Everton Oliveira</h1>
-            <p>Dado o fluxo de dados atual, a compilação final do programa causou o bug dos argumentos que definem um schema dinâmico</p>
+            <p>Desenvolvedor com experiência em desenvolvimento Web e Mobile, fique a vontade para verificar minhas habilidades e ver meus projetos :)</p>
             <SocialsContainer>
               <button className='resume'>Currículo</button>
 
-              <div>
+              <div id="social_buttons">
                 <SocialButton href="https://www.linkedin.com/in/tonoliveira96/" target="_blank" rel="noopener noreferrer">
                   <FiLinkedin size={24} />
                 </SocialButton>
@@ -80,38 +78,12 @@ const Home: NextPage = () => {
             <h2>Skills</h2>
 
             <Skills>
-              <SkillsItem>
-                <Image src={javascriptIcon} alt="" />
-                <p>HTML</p>
-              </SkillsItem>
-              <SkillsItem>
-                <Image src={javascriptIcon} alt="" />
-                <p>CSS</p>
-              </SkillsItem>
-              <SkillsItem>
-                <Image src={javascriptIcon} alt="" />
-                <p>JavaScript</p>
-              </SkillsItem>
-              <SkillsItem>
-                <Image src={javascriptIcon} alt="" />
-                <p>TypeScript</p>
-              </SkillsItem>
-              <SkillsItem>
-                <Image src={javascriptIcon} alt="" />
-                <p>ReactJS</p>
-              </SkillsItem>
-              <SkillsItem>
-                <Image src={javascriptIcon} alt="" />
-                <p>React Native</p>
-              </SkillsItem>
-              <SkillsItem>
-                <Image src={javascriptIcon} alt="" />
-                <p>Node</p>
-              </SkillsItem>
-              <SkillsItem>
-                <Image src={javascriptIcon} alt="" />
-                <p>Git</p>
-              </SkillsItem>
+              {skills.map(skill => (
+                <SkillsItem key={skill.name}>
+                  <Image src={skill.icon} alt={skill.name} width={48} height={48} />
+                  <p>{skill.name}</p>
+                </SkillsItem>
+              ))}
             </Skills>
           </SectionContainer>
 
@@ -130,7 +102,7 @@ const Home: NextPage = () => {
                 <ButtonVisitWebSite>
                   <FiGlobe />
                   Acessar
-                  </ButtonVisitWebSite>
+                </ButtonVisitWebSite>
               </ProjectCard>
               <ProjectCard>
                 <div>
@@ -141,7 +113,7 @@ const Home: NextPage = () => {
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, eos omnis aliquid assumenda optio earum voluptate voluptas illum quas in quasi fuga mollitia numquam, placeat ratione deserunt libero dignissimos quia.
                 </p>
                 <ButtonVisitWebSite>
-      
+
                   Acessar</ButtonVisitWebSite>
               </ProjectCard>
               <ProjectCard>
