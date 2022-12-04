@@ -1,11 +1,10 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
-import { AboutMe, AsideMenu, HeaderContainer, MainContainer, MenuItem, SectionContainer, Skills, SkillsItem, SocialButton, SocialsContainer, WrapperContainer } from '../../styles/pages/app';
-import { FiLinkedin, FiGithub, FiHome } from "react-icons/fi";
-
-import javascriptIcon from "../assets/skills/javascript.svg";
-import htmlIcon from "../assets/skills/html.svg";
+import { AboutMe, AsideMenu, ButtonVisitWebSite, HeaderContainer, MainContainer, MenuItem, ProjectCard, SectionContainer, SectionProjectsContainer, Skills, SkillsItem, SocialButton, SocialsContainer, WrapperContainer } from '../../styles/pages/app';
+import { FiLinkedin, FiGithub, FiGlobe } from "react-icons/fi";
+import { FaAppStoreIos, FaGooglePlay} from "react-icons/fa"
 import { useState } from 'react';
+import { projets, skills } from '../../styles/data';
 
 const Home: NextPage = () => {
   const [open, setOpen] = useState(false);
@@ -30,6 +29,11 @@ const Home: NextPage = () => {
                 SKILLS
               </MenuItem>
             </li>
+            <li>
+              <MenuItem className='menu-item' href='#projects'>
+                PROJETOS
+              </MenuItem>
+            </li>
           </ul>
         </nav>
 
@@ -41,16 +45,16 @@ const Home: NextPage = () => {
           <div>
             <p>ÓLA, EU SOU</p>
             <h1>Everton Oliveira</h1>
-            <p>Dado o fluxo de dados atual, a compilação final do programa causou o bug dos argumentos que definem um schema dinâmico</p>
+            <p>Desenvolvedor com experiência em desenvolvimento Web e Mobile, fique a vontade para verificar minhas habilidades e ver meus projetos :)</p>
             <SocialsContainer>
               <button className='resume'>Currículo</button>
 
-              <div>
+              <div id="social_buttons">
                 <SocialButton href="https://www.linkedin.com/in/tonoliveira96/" target="_blank" rel="noopener noreferrer">
-                  <FiLinkedin size={ 24 } />
+                  <FiLinkedin size={24} />
                 </SocialButton>
                 <SocialButton href="https://github.com/tonoliveira96" target="_blank" rel="noopener noreferrer">
-                  <FiGithub size={ 24 } />
+                  <FiGithub size={24} />
                 </SocialButton>
               </div>
             </SocialsContainer>
@@ -75,39 +79,50 @@ const Home: NextPage = () => {
             <h2>Skills</h2>
 
             <Skills>
-              <SkillsItem>
-                <Image src={ javascriptIcon } alt="" />
-                <p>HTML</p>
-              </SkillsItem>
-              <SkillsItem>
-                <Image src={ javascriptIcon } alt="" />
-                <p>CSS</p>
-              </SkillsItem>
-              <SkillsItem>
-                <Image src={ javascriptIcon } alt="" />
-                <p>JavaScript</p>
-              </SkillsItem>
-              <SkillsItem>
-                <Image src={ javascriptIcon } alt="" />
-                <p>TypeScript</p>
-              </SkillsItem>
-              <SkillsItem>
-                <Image src={ javascriptIcon } alt="" />
-                <p>ReactJS</p>
-              </SkillsItem>
-              <SkillsItem>
-                <Image src={ javascriptIcon } alt="" />
-                <p>React Native</p>
-              </SkillsItem>
-              <SkillsItem>
-                <Image src={ javascriptIcon } alt="" />
-                <p>Node</p>
-              </SkillsItem>
-              <SkillsItem>
-                <Image src={ javascriptIcon } alt="" />
-                <p>Git</p>
-              </SkillsItem>
+              {skills.map(skill => (
+                <SkillsItem key={skill.name}>
+                  <Image src={skill.icon} alt={skill.name} width={48} height={48} />
+                  <p>{skill.name}</p>
+                </SkillsItem>
+              ))}
             </Skills>
+          </SectionContainer>
+
+          <SectionContainer id='projects'>
+            <span className='top-section'>Veja meus</span>
+            <h2>Projetos</h2>
+            <SectionProjectsContainer>
+              {projets.map(project => (
+                <ProjectCard key={project.project_name}>
+                  <div>
+                    <img src="https://images.pexels.com/photos/69432/pexels-photo-69432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                  </div>
+                  <label id="project_name">{project.project_name}</label>
+                  <p>{project.description}</p>
+                  <div id="visit-buttons">
+                    {project.isApp ? (
+                      <>
+                        <ButtonVisitWebSite target="_blank" href={project.playstore_url}>
+                          <FaGooglePlay/>
+                          Android
+                        </ButtonVisitWebSite>
+                        <ButtonVisitWebSite target="_blank" href={project.apple_url}>
+                          <FaAppStoreIos />
+                          iOS
+                        </ButtonVisitWebSite>
+                      </>
+                    ) : (
+
+                      <ButtonVisitWebSite target="_blank" href={project.site_url}>
+                        <FiGlobe />
+                        Acessar
+                      </ButtonVisitWebSite>
+                    )}
+                  </div>
+
+                </ProjectCard>
+              ))}
+            </SectionProjectsContainer>
           </SectionContainer>
         </MainContainer>
       </WrapperContainer>

@@ -7,7 +7,7 @@ export const AsideMenu = styled('aside', {
   alignItems: 'center',
   position: 'fixed',
   background: '$main',
-  width: 110,
+  width: 128,
   height: '100vh',
   left: 0,
 
@@ -31,12 +31,18 @@ export const AsideMenu = styled('aside', {
 export const MenuItem = styled('a', {
   '&.menu-item': {
     display: 'inline-block',
-    padding: '13px 17px',
+    textAlign: 'center',
+    padding: '10px',
     marginBottom: 10,
-    borderRadius: 6,
-    width: '100%',
+    borderRadius: 10,
+    width: 100,
     color: '$white',
+    background: '$main',
     textDecoration: 'none',
+
+    '&:hover': {
+      filter: 'brightness(0.9)'
+    }
   }
 });
 
@@ -94,7 +100,6 @@ export const SocialsContainer = styled('div', {
   flexDirection: 'row',
   justifyContent: 'space-between',
   alignItems: 'center',
-  gap: '1rem',
 
   'button': {
     padding: '0.6rem 1rem',
@@ -110,14 +115,14 @@ export const SocialsContainer = styled('div', {
     }
   },
 
-  div: {
+  '#social_buttons': {
     display: 'flex',
     flexDirection: 'row',
     filter: ''
   },
 
   '@media(max-width: 680px)': {
-    flexDirection: 'column'
+    flexDirection: 'column',
   }
 });
 
@@ -147,6 +152,7 @@ export const MainContainer = styled('main', {
 export const SectionContainer = styled('section', {
   maxWidth: 1080,
   padding: '3rem 0',
+  transition: 'all 0.6s ease-in-out',
 
   span: {
     position: 'relative',
@@ -192,14 +198,24 @@ export const Skills = styled('ul', {
   display: 'flex',
   flexDirection: 'row',
   flexWrap: 'wrap',
-  gap: '2rem',
+  gap: '1.5rem',
   background: '$white',
   padding: '2.5rem',
   borderRadius: 20,
+
+  '@media(max-width: 680px)': {
+    gap: '1rem',
+  }
 });
 
 export const SkillsItem = styled('li', {
+  display: 'flex',
+  gap: '0.4rem',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  alignItems: 'center',
   listStyle: 'none',
+  wordBreak: 'break-word',
   textAlign: 'center',
   width: 80,
   padding: 10,
@@ -208,11 +224,85 @@ export const SkillsItem = styled('li', {
   boxShadow: '0px 4px 6px rgb(134 151 168 / 10%)',
 
   img: {
-    minWidth: 35,
-    minHeight: 35
+    minWidth: 48,
+    minHeight: 48
   },
 
   p: {
-    fontSize: '0.875rem'
+    fontSize: '0.875rem',
+    fontWeight: 600
+  },
+
+  '&:hover': {
+    filter: 'brightness(0.9)'
   }
 });
+
+export const SectionProjectsContainer = styled('section', {
+  display: 'grid',
+  width: '100%',
+  gap: '1rem',
+  gridTemplateColumns: '50% 50%',
+
+  '@media(max-width: 720px)': {
+    gridTemplateColumns: '100%'
+  }
+});
+
+export const ProjectCard = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '0.5rem',
+  justifyContent: 'left',
+  background: '$white',
+  padding: '2rem',
+  borderRadius: 30,
+
+  img: {
+    width: '100%',
+    height: '100%',
+
+  },
+
+  '#project_name': {
+    width: '100%',
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'left'
+  },
+
+  p: {
+    fontSize: 14,
+    lineHeight: 1.4,
+    textAlign: 'justify'
+  },
+
+  '#visit-buttons':{
+    display:'flex',
+    gap: '0.5rem'
+  },
+
+  '@media(max-width: 680px)': {
+    padding: '1rem',
+  }
+});
+
+export const ButtonVisitWebSite = styled('a', {
+  display: 'flex',
+  gap: '0.3rem',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: 100,
+  fontSize: 16,
+  padding: '0.5rem',
+  borderRadius: 10,
+  marginTop: 10,
+  background: '$main',
+  color: '$white',
+  textDecoration: 'none',
+
+  '&:hover': {
+    filter: 'brightness(0.9)'
+  }
+})
+

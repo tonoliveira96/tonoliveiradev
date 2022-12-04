@@ -7,7 +7,7 @@ export default function Document() {
       <Head>
         <title>Ton Oliveira - Dev</title>
         <meta name='description' content='Olá, eu sou Everton Oliveira, desenvolvedor web.' />
-        <meta property='og:title' content='Everton Oliveira - Desenvolvedor web' />
+        <meta property='og:title' content='Everton Oliveira - Desenvolvedor Web' />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
