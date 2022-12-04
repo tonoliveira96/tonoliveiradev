@@ -1,7 +1,7 @@
 export const projets = [
   {
     project_name: "App Start",
-    description: "No aplicativo você pode encontrar locais públicos em Manhuaçu-MG, para a prática de atividades físicas e avaliar os locais com uma nota com base na suas experiência. Veja também sugestões de atividades para serem realizadas no local.",
+    description: "No aplicativo você pode encontrar locais públicos em Manhuaçu-MG, para a prática de atividades físicas e avaliar os locais com uma nota com base na suas experiênciaS. Veja também sugestões de atividades para serem realizadas no local.",
     image: '',
     categoty: 'aplicativo',
     isApp: true,
