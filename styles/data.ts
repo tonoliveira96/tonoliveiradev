@@ -1,32 +1,32 @@
 export const projets = [
   {
-    project_name: "Start",
-    description: "Start é um aplicativo desenvolvido para encontrar locais públicos para realiz",
+    project_name: "App Start",
+    description: "No aplicativo você pode encontrar locais públicos em Manhuaçu-MG, para a prática de atividades físicas e avaliar os locais com uma nota com base na suas experiência. Veja também sugestões de atividades para serem realizadas no local.",
     image: '',
     categoty: 'aplicativo',
     isApp: true,
     site_url: '',
-    playstore_url: '',
+    playstore_url: 'https://play.google.com/store/apps/details?id=com.tonoliveiradev.startapp',
     apple_url: ''
   },
   {
     project_name: "Site - AnoteChuva",
-    description: "Landing page criada para divulgação do meu projeto pessoal, ANOTECHUVA",
+    description: "Landing page criada para divulgação do meu projeto pessoal, AnoteChuva.",
     image: '',
     categoty: 'website',
     isApp: false,
-    site_url: '',
+    site_url: 'https://anotechuva.com',
     playstore_url: '',
     apple_url: ''
   },
   {
     project_name: "Aplicativo - AnoteChuva",
     categoty: 'aplicativo',
-    description: "Aplicativo para ",
+    description: "AnoteChuva é uma aplicação gratuita, desenvolvida com objetivo de facilitar o registro de precipitação de chuvas em um determinado local. Usando um pluviômetro o usuário diariamente realiza as medições e cadastrar as informações alimentando assim uma base de dados unificada.",
     image: '',
     isApp: false,
     site_url: '',
-    playstore_url: '',
+    playstore_url: 'https://play.google.com/store/apps/details?id=com.tonoliveiradev.anotechuva',
     apple_url: ''
   }
 ];

@@ -273,8 +273,13 @@ export const ProjectCard = styled('div', {
 
   p: {
     fontSize: 14,
-    lineHeight: 1.6,
+    lineHeight: 1.4,
     textAlign: 'justify'
+  },
+
+  '#visit-buttons':{
+    display:'flex',
+    gap: '0.5rem'
   },
 
   '@media(max-width: 680px)': {
@@ -287,13 +292,14 @@ export const ButtonVisitWebSite = styled('a', {
   gap: '0.3rem',
   alignItems: 'center',
   justifyContent: 'center',
-  maxWidth: 128,
+  width: 100,
   fontSize: 16,
   padding: '0.5rem',
   borderRadius: 10,
   marginTop: 10,
   background: '$main',
   color: '$white',
+  textDecoration: 'none',
 
   '&:hover': {
     filter: 'brightness(0.9)'

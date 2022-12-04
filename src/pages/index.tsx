@@ -2,8 +2,9 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import { AboutMe, AsideMenu, ButtonVisitWebSite, HeaderContainer, MainContainer, MenuItem, ProjectCard, SectionContainer, SectionProjectsContainer, Skills, SkillsItem, SocialButton, SocialsContainer, WrapperContainer } from '../../styles/pages/app';
 import { FiLinkedin, FiGithub, FiGlobe } from "react-icons/fi";
+import { FaAppStoreIos, FaGooglePlay} from "react-icons/fa"
 import { useState } from 'react';
-import { skills } from '../../styles/data';
+import { projets, skills } from '../../styles/data';
 
 const Home: NextPage = () => {
   const [open, setOpen] = useState(false);
@@ -91,41 +92,36 @@ const Home: NextPage = () => {
             <span className='top-section'>Veja meus</span>
             <h2>Projetos</h2>
             <SectionProjectsContainer>
-              <ProjectCard>
-                <div>
-                  <img src="https://images.pexels.com/photos/69432/pexels-photo-69432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-                </div>
-                <span id="project_name">AnoteChuva</span>
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, eos omnis aliquid assumenda optio earum voluptate voluptas illum quas in quasi fuga mollitia numquam, placeat ratione deserunt libero dignissimos quia.
-                </p>
-                <ButtonVisitWebSite>
-                  <FiGlobe />
-                  Acessar
-                </ButtonVisitWebSite>
-              </ProjectCard>
-              <ProjectCard>
-                <div>
-                  <img src="https://images.pexels.com/photos/69432/pexels-photo-69432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-                </div>
-                <span id="project_name">AnoteChuva</span>
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, eos omnis aliquid assumenda optio earum voluptate voluptas illum quas in quasi fuga mollitia numquam, placeat ratione deserunt libero dignissimos quia.
-                </p>
-                <ButtonVisitWebSite>
+              {projets.map(project => (
+                <ProjectCard key={project.project_name}>
+                  <div>
+                    <img src="https://images.pexels.com/photos/69432/pexels-photo-69432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                  </div>
+                  <label id="project_name">{project.project_name}</label>
+                  <p>{project.description}</p>
+                  <div id="visit-buttons">
+                    {project.isApp ? (
+                      <>
+                        <ButtonVisitWebSite target="_blank" href={project.playstore_url}>
+                          <FaGooglePlay/>
+                          Android
+                        </ButtonVisitWebSite>
+                        <ButtonVisitWebSite target="_blank" href={project.apple_url}>
+                          <FaAppStoreIos />
+                          iOS
+                        </ButtonVisitWebSite>
+                      </>
+                    ) : (
 
-                  Acessar</ButtonVisitWebSite>
-              </ProjectCard>
-              <ProjectCard>
-                <div>
-                  <img src="https://images.pexels.com/photos/69432/pexels-photo-69432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-                </div>
-                <span id="project_name">AnoteChuva</span>
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, eos omnis aliquid assumenda optio earum voluptate voluptas illum quas in quasi fuga mollitia numquam, placeat ratione deserunt libero dignissimos quia.
-                </p>
-                <ButtonVisitWebSite>Acessar</ButtonVisitWebSite>
-              </ProjectCard>
+                      <ButtonVisitWebSite target="_blank" href={project.site_url}>
+                        <FiGlobe />
+                        Acessar
+                      </ButtonVisitWebSite>
+                    )}
+                  </div>
+
+                </ProjectCard>
+              ))}
             </SectionProjectsContainer>
           </SectionContainer>
         </MainContainer>
