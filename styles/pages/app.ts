@@ -261,7 +261,7 @@ export const ProjectCard = styled('div', {
   img: {
     width: '100%',
     height: '100%',
-
+    borderRadius: 10,
   },
 
   '#project_name': {
@@ -277,8 +277,8 @@ export const ProjectCard = styled('div', {
     textAlign: 'justify'
   },
 
-  '#visit-buttons':{
-    display:'flex',
+  '#visit-buttons': {
+    display: 'flex',
     gap: '0.5rem'
   },
 

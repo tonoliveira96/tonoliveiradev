@@ -2,15 +2,30 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import { AboutMe, AsideMenu, ButtonVisitWebSite, HeaderContainer, MainContainer, MenuItem, ProjectCard, SectionContainer, SectionProjectsContainer, Skills, SkillsItem, SocialButton, SocialsContainer, WrapperContainer } from '../../styles/pages/app';
 import { FiLinkedin, FiGithub, FiGlobe } from "react-icons/fi";
-import { FaAppStoreIos, FaGooglePlay} from "react-icons/fa"
+import { FaAppStoreIos, FaGooglePlay } from "react-icons/fa";
 import { useState } from 'react';
 import { projets, skills } from '../../styles/data';
+import Head from 'next/head';
+import * as gtag from "../lib/gtag";
 
 const Home: NextPage = () => {
   const [open, setOpen] = useState(false);
 
+
+  const handleSocialClick = (social: string) =>{
+    gtag.event({
+      action: 'click',
+      category: '',
+      label: 'LinkedIn',
+      value: ''
+    })
+  }
+
   return (
     <>
+      <Head>
+        <title>Ton Oliveira - Dev</title>
+      </Head>
       <AsideMenu hidden={open}>
         <nav>
           <ul>
@@ -43,14 +58,14 @@ const Home: NextPage = () => {
         <HeaderContainer id="#home">
           <img src="https://github.com/tonoliveira96.png" alt='Foto de perfil' />
           <div>
-            <p>ÓLA, EU SOU</p>
+            <p>OLÁ, EU SOU</p>
             <h1>Everton Oliveira</h1>
             <p>Desenvolvedor com experiência em desenvolvimento Web e Mobile, fique a vontade para verificar minhas habilidades e ver meus projetos :)</p>
             <SocialsContainer>
               <button className='resume'>Currículo</button>
 
               <div id="social_buttons">
-                <SocialButton href="https://www.linkedin.com/in/tonoliveira96/" target="_blank" rel="noopener noreferrer">
+                <SocialButton href="https://www.linkedin.com/in/tonoliveira96/" target="_blank" rel="noopener noreferrer" onClick={()=>handleSocialClick('linkedin')}>
                   <FiLinkedin size={24} />
                 </SocialButton>
                 <SocialButton href="https://github.com/tonoliveira96" target="_blank" rel="noopener noreferrer">
@@ -103,7 +118,7 @@ const Home: NextPage = () => {
                     {project.isApp ? (
                       <>
                         <ButtonVisitWebSite target="_blank" href={project.playstore_url}>
-                          <FaGooglePlay/>
+                          <FaGooglePlay />
                           Android
                         </ButtonVisitWebSite>
                         <ButtonVisitWebSite target="_blank" href={project.apple_url}>
