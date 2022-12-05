@@ -282,6 +282,11 @@ export const ProjectCard = styled('div', {
     gap: '0.5rem'
   },
 
+  '& img:hover': {
+    filter: 'brightness(0.8)',
+    transition: 'ease-in 200ms'
+  },
+
   '@media(max-width: 680px)': {
     padding: '1rem',
   }

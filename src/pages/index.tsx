@@ -12,14 +12,23 @@ const Home: NextPage = () => {
   const [open, setOpen] = useState(false);
 
 
-  const handleSocialClick = (social: string) =>{
+  const handleSocialClick = (social: string) => {
     gtag.event({
       action: 'click',
       category: '',
       label: 'LinkedIn',
       value: ''
-    })
-  }
+    });
+  };
+
+  const handleProjectClick = (name: string) => {
+    gtag.event({
+      action: 'projects',
+      category: name,
+      label: name,
+      value: '',
+    });
+  };
 
   return (
     <>
@@ -65,7 +74,7 @@ const Home: NextPage = () => {
               <button className='resume'>Currículo</button>
 
               <div id="social_buttons">
-                <SocialButton href="https://www.linkedin.com/in/tonoliveira96/" target="_blank" rel="noopener noreferrer" onClick={()=>handleSocialClick('linkedin')}>
+                <SocialButton href="https://www.linkedin.com/in/tonoliveira96/" target="_blank" rel="noopener noreferrer" onClick={() => handleSocialClick('linkedin')}>
                   <FiLinkedin size={24} />
                 </SocialButton>
                 <SocialButton href="https://github.com/tonoliveira96" target="_blank" rel="noopener noreferrer">
@@ -128,7 +137,10 @@ const Home: NextPage = () => {
                       </>
                     ) : (
 
-                      <ButtonVisitWebSite target="_blank" href={project.site_url}>
+                      <ButtonVisitWebSite
+                        target="_blank"
+                        href={project.site_url}
+                        onClick={() => handleProjectClick(project.project_name)}>
                         <FiGlobe />
                         Acessar
                       </ButtonVisitWebSite>
