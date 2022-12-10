@@ -14,19 +14,17 @@ const Home: NextPage = () => {
 
   const handleSocialClick = (social: string) => {
     gtag.event({
-      action: 'click',
+      action: 'accessed_links',
       category: '',
-      label: 'LinkedIn',
-      value: ''
+      label: social,
     });
   };
 
   const handleProjectClick = (name: string) => {
     gtag.event({
-      action: 'projects',
+      action: 'accessed_links',
       category: name,
       label: name,
-      value: '',
     });
   };
 
@@ -64,20 +62,26 @@ const Home: NextPage = () => {
       </AsideMenu>
 
       <WrapperContainer>
-        <HeaderContainer id="#home">
+        <HeaderContainer id="home">
           <img src="https://github.com/tonoliveira96.png" alt='Foto de perfil' />
           <div>
             <p>OLÁ, EU SOU</p>
             <h1>Everton Oliveira</h1>
             <p>Desenvolvedor com experiência em desenvolvimento Web e Mobile, fique a vontade para verificar minhas habilidades e ver meus projetos :)</p>
             <SocialsContainer>
-              <button className='resume'>Currículo</button>
-
               <div id="social_buttons">
-                <SocialButton href="https://www.linkedin.com/in/tonoliveira96/" target="_blank" rel="noopener noreferrer" onClick={() => handleSocialClick('linkedin')}>
+                <SocialButton
+                  href="https://www.linkedin.com/in/tonoliveira96/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => handleSocialClick('linkedin')}>
                   <FiLinkedin size={24} />
                 </SocialButton>
-                <SocialButton href="https://github.com/tonoliveira96" target="_blank" rel="noopener noreferrer">
+                <SocialButton href="https://github.com/tonoliveira96"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => handleSocialClick('github')}
+                >
                   <FiGithub size={24} />
                 </SocialButton>
               </div>
@@ -126,11 +130,19 @@ const Home: NextPage = () => {
                   <div id="visit-buttons">
                     {project.isApp ? (
                       <>
-                        <ButtonVisitWebSite target="_blank" href={project.playstore_url}>
+                        <ButtonVisitWebSite
+                          target="_blank"
+                          href={project.playstore_url}
+                          onClick={() => handleProjectClick("android/" + project.project_name)}
+                        >
                           <FaGooglePlay />
                           Android
                         </ButtonVisitWebSite>
-                        <ButtonVisitWebSite target="_blank" href={project.apple_url}>
+                        <ButtonVisitWebSite
+                          target="_blank"
+                          href={project.apple_url}
+                          onClick={() => handleProjectClick("ios/" + project.project_name)}
+                        >
                           <FaAppStoreIos />
                           iOS
                         </ButtonVisitWebSite>
