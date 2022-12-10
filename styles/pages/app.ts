@@ -251,11 +251,12 @@ export const SectionProjectsContainer = styled('section', {
 
 export const ProjectCard = styled('div', {
   display: 'flex',
+  position: 'relative',
   flexDirection: 'column',
   gap: '0.5rem',
   justifyContent: 'left',
   background: '$white',
-  padding: '2rem',
+  padding: '2rem 2rem 4rem',
   borderRadius: 30,
 
   img: {
@@ -279,7 +280,14 @@ export const ProjectCard = styled('div', {
 
   '#visit-buttons': {
     display: 'flex',
+    position: 'absolute',
+    bottom: 12,
     gap: '0.5rem'
+  },
+
+  '& img:hover': {
+    filter: 'brightness(0.8)',
+    transition: 'ease-in 200ms'
   },
 
   '@media(max-width: 680px)': {
@@ -296,7 +304,6 @@ export const ButtonVisitWebSite = styled('a', {
   fontSize: 16,
   padding: '0.5rem',
   borderRadius: 10,
-  marginTop: 10,
   background: '$main',
   color: '$white',
   textDecoration: 'none',
