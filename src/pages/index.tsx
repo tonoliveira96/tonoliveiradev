@@ -1,6 +1,21 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
-import { AboutMe, AsideMenu, ButtonVisitWebSite, HeaderContainer, MainContainer, MenuItem, ProjectCard, SectionContainer, SectionProjectsContainer, Skills, SkillsItem, SocialButton, SocialsContainer, WrapperContainer } from '../../styles/pages/app';
+import {
+  AboutMe,
+  AsideMenu,
+  ButtonVisitWebSite,
+  HeaderContainer,
+  MainContainer,
+  MenuItem,
+  ProjectCard,
+  SectionContainer,
+  SectionProjectsContainer,
+  Skills,
+  SkillsItem,
+  SocialButton,
+  SocialsContainer,
+  WrapperContainer
+} from '../../styles/pages/app';
 import { FiLinkedin, FiGithub, FiGlobe } from "react-icons/fi";
 import { FaAppStoreIos, FaGooglePlay } from "react-icons/fa";
 import { useState } from 'react';
@@ -123,7 +138,11 @@ const Home: NextPage = () => {
               {projets.map(project => (
                 <ProjectCard key={project.project_name}>
                   <div>
-                    <img src="https://images.pexels.com/photos/69432/pexels-photo-69432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                    <Image src="https://images.pexels.com/photos/69432/pexels-photo-69432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                      alt={project.project_name}
+                      width={476}
+                      height={257}
+                    />
                   </div>
                   <label id="project_name">{project.project_name}</label>
                   <p>{project.description}</p>
