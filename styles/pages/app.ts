@@ -261,7 +261,7 @@ export const ProjectCard = styled('div', {
 
   img: {
     width: '100%',
-    height: '100%',
+    maxHeight: 280,
     borderRadius: 10,
   },
 
