@@ -204,7 +204,8 @@ export const Skills = styled('ul', {
   borderRadius: 20,
 
   '@media(max-width: 680px)': {
-    gap: '1rem',
+    gap: '0.5rem',
+    padding: '0.5rem'
   }
 });
 
@@ -229,12 +230,20 @@ export const SkillsItem = styled('li', {
   },
 
   p: {
-    fontSize: '0.875rem',
+    fontSize: '0.75rem',
     fontWeight: 600
   },
 
   '&:hover': {
     filter: 'brightness(0.9)'
+  },
+
+  '@media(max-width: 680px)': {
+    width: 70,
+    img: {
+      minWidth: 32,
+      minHeight: 32
+    },
   }
 });
 
