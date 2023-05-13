@@ -52,22 +52,22 @@ const Home: NextPage = () => {
         <nav>
           <ul>
             <li>
-              <MenuItem className='menu-item' href='#home' id="home">
+              <MenuItem className='menu-item' href='#home'>
                 HOME
               </MenuItem>
             </li>
             <li>
-              <MenuItem className='menu-item' href='#sobre' id="sobre">
+              <MenuItem className='menu-item' href='#sobre'>
                 SOBRE
               </MenuItem>
             </li>
             <li>
-              <MenuItem className='menu-item' href='#skills' id="skills">
+              <MenuItem className='menu-item' href='#skills'>
                 SKILLS
               </MenuItem>
             </li>
             <li>
-              <MenuItem className='menu-item' href='#projetos' id="projetos">
+              <MenuItem className='menu-item' href='#projetos'>
                 PROJETOS
               </MenuItem>
             </li>
