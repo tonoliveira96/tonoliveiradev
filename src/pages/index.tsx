@@ -21,6 +21,7 @@ import {
   SocialsContainer,
   WrapperContainer,
 } from '../../styles/pages/app';
+import logo from '../assets/logo.png';
 import * as gtag from '../lib/gtag';
 
 const Home: NextPage = () => {
@@ -76,11 +77,9 @@ const Home: NextPage = () => {
 
       <WrapperContainer>
         <HeaderContainer id='home'>
-          <Image
-            src='https://github.com/tonoliveira96.png'
+          <img
+            src={logo.src}
             alt='Foto de perfil'
-            width="350"
-            height="350"
           />
           <div>
             <p>OLÁ, EU SOU</p>

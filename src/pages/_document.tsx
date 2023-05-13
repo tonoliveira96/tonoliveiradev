@@ -13,7 +13,7 @@ export default function Document() {
 
         <meta property="og:title" content="Everton Oliveira - Desenvolvedor Web" />
         <meta property="og:description" content="Olá, eu sou Everton Oliveira, desenvolvedor web." />
-        <meta property="og:image" content="https://github.com/tonoliveira96.png" />
+        <meta property="og:image" content="/_next/static/media/logo.0a76fa63.png" />
         <meta property="og:url" content="https://tonoliveiradev.com.br" />
 
         <link rel="canonical" href="https://tonoliveiradev.com.br" />
