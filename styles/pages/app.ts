@@ -291,7 +291,7 @@ export const ProjectCard = styled('div', {
   },
 
   '@media(max-width: 680px)': {
-    padding: '1rem',
+    padding: '1rem 1rem 4rem',
   }
 });
 

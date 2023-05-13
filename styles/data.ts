@@ -10,6 +10,16 @@ export const projets = [
     apple_url: ''
   },
   {
+    project_name: "App Start - Admin",
+    description: "Painel administrativo do aplicativo Start, onde é possível através de um mapa, cadastradar os locais que irão aparecer no aplicativo. Adicionando informações como: localização no mapa nome, descrição, atividades disponíveis e fotos.",
+    image: '',
+    categoty: 'aplicativo',
+    isApp: false,
+    site_url: '',
+    playstore_url: '',
+    apple_url: ''
+  },
+  {
     project_name: "Site - AnoteChuva",
     description: "Landing page criada para divulgação do meu projeto pessoal, AnoteChuva.",
     image: '',
@@ -24,7 +34,7 @@ export const projets = [
     categoty: 'aplicativo',
     description: "AnoteChuva é uma aplicação gratuita, desenvolvida com objetivo de facilitar o registro de precipitação de chuvas em um determinado local. Usando um pluviômetro o usuário diariamente realiza as medições e cadastrar as informações alimentando assim uma base de dados unificada.",
     image: '',
-    isApp: false,
+    isApp: true,
     site_url: '',
     playstore_url: 'https://play.google.com/store/apps/details?id=com.tonoliveiradev.anotechuva',
     apple_url: ''
