@@ -22,26 +22,9 @@ import {
   WrapperContainer,
 } from '../../styles/pages/app';
 import logo from '../assets/logo.png';
-import * as gtag from '../lib/gtag';
 
 const Home: NextPage = () => {
   const [open, setOpen] = useState(false);
-
-  const handleSocialClick = (social: string) => {
-    gtag.event({
-      action: 'accessed_links',
-      category: '',
-      label: social,
-    });
-  };
-
-  const handleProjectClick = (name: string) => {
-    gtag.event({
-      action: 'accessed_links',
-      category: name,
-      label: name,
-    });
-  };
 
   return (
     <>
@@ -96,7 +79,6 @@ const Home: NextPage = () => {
                   href='https://www.linkedin.com/in/tonoliveira96/'
                   target='_blank'
                   rel='noopener noreferrer'
-                  onClick={() => handleSocialClick('linkedin')}
                 >
                   <FiLinkedin size={24} />
                 </SocialButton>
@@ -105,7 +87,6 @@ const Home: NextPage = () => {
                   href='https://github.com/tonoliveira96'
                   target='_blank'
                   rel='noopener noreferrer'
-                  onClick={() => handleSocialClick('github')}
                 >
                   <FiGithub size={24} />
                 </SocialButton>
@@ -172,11 +153,6 @@ const Home: NextPage = () => {
                           target='_blank'
                           href={project.playstore_url}
                           id={'android/' + project.project_name}
-                          onClick={() =>
-                            handleProjectClick(
-                              'android/' + project.project_name
-                            )
-                          }
                         >
                           <FaGooglePlay />
                           Android
@@ -185,9 +161,6 @@ const Home: NextPage = () => {
                           target='_blank'
                           href={project.apple_url}
                           id={'ios/' + project.project_name}
-                          onClick={() =>
-                            handleProjectClick('ios/' + project.project_name)
-                          }
                         >
                           <FaAppStoreIos />
                           iOS
@@ -198,7 +171,6 @@ const Home: NextPage = () => {
                         target='_blank'
                         href={project.site_url}
                         id={project.project_name}
-                        onClick={() => handleProjectClick(project.project_name)}
                       >
                         <FiGlobe />
                         Acessar
