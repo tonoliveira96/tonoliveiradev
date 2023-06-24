@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -23,7 +23,7 @@ import {
 } from '../../styles/pages/app';
 import logo from '../assets/logo.png';
 
-const Home: NextPage = () => {
+export default function Home() {
   const [open, setOpen] = useState(false);
 
   return (
@@ -187,4 +187,9 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {},
+    revalidate: 60 * 60 * 2 // 2 horas
+  };
+};
